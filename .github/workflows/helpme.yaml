@@ -184,7 +184,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: depcheck-report
-                uses: reports/
+                path: reports/
 
     # GATE#3: Container/Image scanning via Trivy (SARIF + artifact)
     image-scanning:
@@ -216,7 +216,7 @@ jobs:
             - name: Trivy
               uses: github/codeql-action/upload-sarif@v3
               with:
-                sarif-file: 'trivy-results.sarif'
+                sarif_file: 'trivy-results.sarif'
                 category: trivy
             # TODO#21: upload trivy-results.sarif as workflow artifact
 
